@@ -19,4 +19,9 @@ public class Booking {
     public Booking createBooking(Bedroom newBedroom, int numberNights) {
         return new Booking(newBedroom, numberNights);
     }
+
+    public int getBookingBill() {
+        int rate = this.bedroom.getRoomRate();
+        return this.numberOfNights * rate;
+    }
 }

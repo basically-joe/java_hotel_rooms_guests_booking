@@ -40,6 +40,11 @@ public class BookingTest {
         assertEquals(6, booking2.getNumberOfNights());
     }
 
+    @Test
+    public void canGetTotalBill(){
+        assertEquals(1500, booking.getBookingBill());
+    }
+
 
 
 }
