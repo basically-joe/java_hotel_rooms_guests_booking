@@ -6,10 +6,13 @@ public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<DiningRoom> diningRooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
-    private ArrayList<Guest> guests;
+    private ArrayList<Guest> guestsInHotel;
 
     public Hotel(String name){
         this.name=name;
+        this.bedrooms = new ArrayList<>();
+        this.conferenceRooms = new ArrayList<>();
+        this.guestsInHotel = new ArrayList<>();
 
     }
 
