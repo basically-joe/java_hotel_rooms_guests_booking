@@ -28,7 +28,17 @@ public class Hotel {
         return this.guestsInHotel.size();
     }
 
-    public void checkInGuest(Guest guest) {
+    public boolean addGuestToRoom(Bedroom bedroomTocheck) {
+        for (Bedroom bedroom : this.bedrooms)
+            if (bedroom == bedroomTocheck) {
+                bedroomTocheck.vacant = false;
+            }
+        return bedroomTocheck.vacant;
+
+    }
+
+    public void checkInGuest(Bedroom bedroom, Guest guest) {
+        addGuestToRoom(bedroom);
         if (getGuestCount() < this.hotelCapacity) {
             this.guestsInHotel.add(guest);
         }
@@ -54,15 +64,6 @@ public class Hotel {
         return this.vacantBedrooms.size();
     }
 
-    public boolean addGuestToRoom(Bedroom bedroomTocheck) {
-        for (Bedroom bedroom : this.bedrooms)
-            if (bedroom == bedroomTocheck) {
-                bedroomTocheck.vacant = false;
-//            boolean result = bedroomTocheck.vacant;
-            }
-        return bedroomTocheck.vacant;
-
-    }
 
 }
 

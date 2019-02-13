@@ -34,13 +34,13 @@ public class HotelTest {
 
     @Test
     public void canCheckInGuest(){
-        hotel.checkInGuest(guest);
+        hotel.checkInGuest(bedroom, guest);
         assertEquals(1, hotel.getGuestCount());
     }
 
     @Test
     public void canCheckOutGuest(){
-        hotel.checkInGuest(guest);
+        hotel.checkInGuest(bedroom, guest);
         assertEquals(1, hotel.getGuestCount());
         hotel.checkOutGuest();
         assertEquals(0,hotel.getGuestCount());
@@ -49,7 +49,7 @@ public class HotelTest {
     @Test
     public void checkInGuestsUpToCapacity(){
         for (int i = 0; i < 1100; i++){
-            hotel.checkInGuest(guest);
+            hotel.checkInGuest(bedroom, guest);
         }
         assertEquals(1000, hotel.getGuestCount());
     }
