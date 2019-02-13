@@ -76,7 +76,6 @@ public class HotelTest {
 
     @Test
     public void testChargeCustomerForRoom(){
-//        hotel.chargeCustomer(guest, bedroom4);
         assertEquals(250, hotel.chargeCustomer(guest, bedroom4));
     }
 
