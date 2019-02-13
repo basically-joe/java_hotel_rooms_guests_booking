@@ -6,13 +6,16 @@ public class Bedroom {
     private int roomCapacity;
     private String type;
     private int rate;
+    private boolean vacant;
     private ArrayList<Guest> guestsInBedroom;
 
-    public Bedroom(int roomNumber, int roomCapacity, String type, int rate){
+
+    public Bedroom(int roomNumber, int roomCapacity, String type, int rate, boolean vacant){
         this.roomNumber = roomNumber;
         this.roomCapacity = roomCapacity;
         this.type = type;
         this.rate = rate;
+        this.vacant = vacant;
         this.guestsInBedroom = new ArrayList<>();
     }
 
@@ -30,6 +33,10 @@ public class Bedroom {
 
     public int getRoomRate(){
         return this.rate;
+    }
+
+    public boolean getVacancy(){
+        return this.vacant;
     }
 
 }

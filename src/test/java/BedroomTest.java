@@ -9,7 +9,7 @@ public class BedroomTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(12, 2, "double", 100);
+        bedroom = new Bedroom(12, 2, "double", 100, true);
     }
 
     @Test
@@ -30,6 +30,11 @@ public class BedroomTest {
     @Test
     public void hasRate(){
         assertEquals(100, bedroom.getRoomRate());
+    }
+
+    @Test
+    public void testIsVacant(){
+        assertEquals(true, bedroom.getVacancy());
     }
 
 }

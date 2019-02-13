@@ -14,10 +14,10 @@ public class BookingTest {
 
     @Before
     public void before(){
-        bedroom = new Bedroom(12, 2, "single", 300);
-        bedroom2 = new Bedroom(14, 3, "suite", 700);
-        bedroom3 = new Bedroom(16, 4, "double", 500);
-        bedroom4 = new Bedroom(18, 1, "single", 250);
+        bedroom = new Bedroom(12, 2, "single", 300, true);
+        bedroom2 = new Bedroom(14, 3, "suite", 700, true);
+        bedroom3 = new Bedroom(16, 4, "double", 500, true);
+        bedroom4 = new Bedroom(18, 1, "single", 250, true);
         booking = new Booking(bedroom, 5);
         booking2 = new Booking(bedroom2, 6);
     }
@@ -26,8 +26,6 @@ public class BookingTest {
     public void testNumberOfNights(){
         assertEquals(5, booking.getNumberOfNights());
     }
-
-
 
     @Test public void canCreateBookingTest() {
         booking.createBooking(bedroom, 5);
