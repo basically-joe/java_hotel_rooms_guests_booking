@@ -9,12 +9,17 @@ public class GuestTest {
 
 	@Before
 	public void before(){
-		guest = new Guest("Joe");
+		guest = new Guest("Joe", 500);
 	}
 
 	@Test
 	public void canGetGuestName(){
 		assertEquals("Joe", guest.getGuestName());
+	}
+
+	@Test
+	public void testGuestHasMoneyInWallet(){
+		assertEquals(500, guest.getGuestWalletValue());
 	}
 
 }
