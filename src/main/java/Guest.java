@@ -16,4 +16,8 @@ public class Guest {
 		return this.wallet;
 	}
 
+	public int removeMoneyFromWallet(int roomCost){
+		return this.wallet - roomCost;
+	}
+
 }

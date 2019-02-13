@@ -22,4 +22,9 @@ public class GuestTest {
 		assertEquals(500, guest.getGuestWalletValue());
 	}
 
+	@Test
+	public void testRemoveMoneyFromWallet(){
+		assertEquals(250, guest.removeMoneyFromWallet(250));
+	}
+
 }
