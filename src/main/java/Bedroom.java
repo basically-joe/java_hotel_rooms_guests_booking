@@ -5,7 +5,7 @@ public class Bedroom {
     private int roomNumber;
     private int roomCapacity;
     private String type;
-    private int rate;
+    public int rate;
     public boolean vacant;
     private ArrayList<Guest> guestsInBedroom;
 
