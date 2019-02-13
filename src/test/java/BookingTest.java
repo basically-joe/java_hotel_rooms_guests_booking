@@ -6,19 +6,20 @@ import static org.junit.Assert.assertEquals;
 public class BookingTest {
 
     Booking booking;
+    Booking booking2;
     Bedroom bedroom;
-    Bedroom bedroom1;
     Bedroom bedroom2;
     Bedroom bedroom3;
     Bedroom bedroom4;
 
     @Before
     public void before(){
-        booking = new Booking(5);
         bedroom = new Bedroom(12, 2, "single", 300);
         bedroom2 = new Bedroom(14, 3, "suite", 700);
         bedroom3 = new Bedroom(16, 4, "double", 500);
         bedroom4 = new Bedroom(18, 1, "single", 250);
+        booking = new Booking(bedroom, 5);
+        booking2 = new Booking(bedroom2, 6);
     }
 
     @Test
@@ -26,9 +27,17 @@ public class BookingTest {
         assertEquals(5, booking.getNumberOfNights());
     }
 
+
+
+    @Test public void canCreateBookingTest() {
+        booking.createBooking(bedroom, 5);
+        assertEquals(5, booking.getNumberOfNights());
+    }
+
     @Test
-    public void hasBedrooms(){
-        assertEquals(0, booking.getNumberOfBedrooms());
+    public void cannotCreateBookingTest(){
+        booking.createBooking(bedroom2, 7);
+        assertEquals(6, booking2.getNumberOfNights());
     }
 
 
