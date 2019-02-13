@@ -35,8 +35,8 @@ public class Bedroom {
         return this.rate;
     }
 
-    public boolean getVacancy(){
-        return this.vacant;
+    public boolean getVacancy() {
+            return this.vacant;
     }
 
 }
