@@ -44,4 +44,6 @@ public class BedroomTest {
         assertEquals(false, bedroom2.getVacancy());
     }
 
+
+
 }

@@ -10,7 +10,7 @@ public class Hotel {
     private ArrayList<ConferenceRoom> conferenceRooms;
     private ArrayList<Guest> guestsInHotel;
 
-    public Hotel(String name, int hotelCapacity){
+    public Hotel(String name, int hotelCapacity) {
         this.name = name;
         this.hotelCapacity = hotelCapacity;
         this.bedrooms = new ArrayList<>();
@@ -20,42 +20,51 @@ public class Hotel {
 
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public int getGuestCount(){
+    public int getGuestCount() {
         return this.guestsInHotel.size();
     }
 
-    public void checkInGuest(Guest guest){
-        if(getGuestCount() < this.hotelCapacity) {
+    public void checkInGuest(Guest guest) {
+        if (getGuestCount() < this.hotelCapacity) {
             this.guestsInHotel.add(guest);
         }
     }
 
-    public void checkOutGuest(){
+    public void checkOutGuest() {
         this.guestsInHotel.remove(0);
     }
 
-    public int countBedrooms(){
+    public int countBedrooms() {
         return this.bedrooms.size();
     }
 
-    public void addBedroom(Bedroom bedroom){
+    public void addBedroom(Bedroom bedroom) {
         this.bedrooms.add(bedroom);
     }
 
-    public int getVacancies(){
+    public int getVacancies() {
         for (Bedroom bedroom : this.bedrooms)
             if (bedroom.getVacancy()) {
                 this.vacantBedrooms.add(bedroom);
             }
-            return this.vacantBedrooms.size();
+        return this.vacantBedrooms.size();
     }
 
+    public boolean addGuestToRoom(Bedroom bedroomTocheck) {
+        for (Bedroom bedroom : this.bedrooms)
+            if (bedroom == bedroomTocheck) {
+                bedroomTocheck.vacant = false;
+//            boolean result = bedroomTocheck.vacant;
+            }
+        return bedroomTocheck.vacant;
 
     }
+
+}
 
 
 

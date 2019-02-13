@@ -68,4 +68,10 @@ public class HotelTest {
         assertEquals(3, hotel.getVacancies());
     }
 
+    @Test
+    public void testAddGuestToRoom(){
+        hotel.addGuestToRoom(bedroom2);
+        assertEquals(true, bedroom.getVacancy());
+    }
+
 }

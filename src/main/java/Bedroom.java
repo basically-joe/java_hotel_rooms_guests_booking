@@ -6,7 +6,7 @@ public class Bedroom {
     private int roomCapacity;
     private String type;
     private int rate;
-    private boolean vacant;
+    public boolean vacant;
     private ArrayList<Guest> guestsInBedroom;
 
 
@@ -36,7 +36,9 @@ public class Bedroom {
     }
 
     public boolean getVacancy() {
-            return this.vacant;
+        return this.vacant;
     }
+
+
 
 }
