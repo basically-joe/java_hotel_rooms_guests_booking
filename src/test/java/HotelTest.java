@@ -9,7 +9,7 @@ public class HotelTest {
 
     @Before
     public void before(){
-        hotel = new Hotel("Hotel Shmotel");
+        hotel = new Hotel("Hotel Shmotel", 1000);
         guest = new Guest();
     }
 
@@ -35,6 +35,14 @@ public class HotelTest {
         assertEquals(1, hotel.getGuestCount());
         hotel.checkOutGuest();
         assertEquals(0,hotel.getGuestCount());
+    }
+
+    @Test
+    public void checkInGuestsUpToCapacity(){
+        for (int i = 0; i < 1100; i++){
+            hotel.checkInGuest(guest);
+        }
+        assertEquals(1000, hotel.getGuestCount());
     }
 
 }
