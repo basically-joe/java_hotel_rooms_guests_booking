@@ -65,7 +65,7 @@ public class Hotel {
 	}
 
 	public int chargeCustomer(Guest guest, Bedroom bedroom){
-		 int total = guest.wallet - bedroom.rate;
+		int total = guest.removeMoneyFromWallet(bedroom.rate);
 		 return total;
 	}
 
